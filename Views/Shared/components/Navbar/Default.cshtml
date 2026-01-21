@@ -1,0 +1,20 @@
+@using Microsoft.VisualBasic
+@model List<Category>
+
+
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container">
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav">
+                @foreach(var category in Model){
+                    <li class="nav-item">
+                        <a href="/product/category/@category.Url" class="nav-link ps-0">@category.CategoryName</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,11 @@
+namespace dotnet_db.Models;
+
+
+public class Category
+{
+    public int Id { get; set; }
+    public string CategoryName { get; set; } = null!;
+    public string? Url { get; set; }
+
+    public List<Product> Products { get; set; } = [];
+}
