@@ -203,6 +203,7 @@ C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\refint\dotnet-db.d
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\dotnet-db.pdb
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\dotnet-db.genruntimeconfig.cache
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\ref\dotnet-db.dll
-C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\compressed\78p31n0539-tpznpjr8xw.gz
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\compressed\1tdlrjzu20-f6guyl0605.gz
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\dotnet-db.sourcelink.json
+C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\compressed\trt1iypmh6-l79u8qdsdx.gz
+C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\compressed\zzsfr37kbp-tpznpjr8xw.gz

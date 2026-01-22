@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Gko/Fjj6Ga26mgDs+intSBqLfFYoAaGFfa8LKYBqeiA=",
+  "Hash": "uvgw9Y0B0+bOyjUojKk1iTucokzJb9G44duv/Lk7CPY=",
   "Source": "dotnet-db",
   "BasePath": "_content/dotnet-db",
   "Mode": "Default",
@@ -246,27 +246,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\78p31n0539-tpznpjr8xw.gz",
-      "SourceId": "dotnet-db",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\",
-      "BasePath": "_content/dotnet-db",
-      "RelativePath": "css/styles#[.{fingerprint=tpznpjr8xw}]?.css.gz",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\styles.css",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "Fingerprint": "ly057v0iru",
-      "Integrity": "46jb08i/SFjaNkr1KegpGj/+YFoNsxeXt4DVqSjRg7s=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\styles.css"
     },
     {
       "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\8h0kerj5ix-pk9g2wxc8p.gz",
@@ -1172,6 +1151,27 @@
       "OriginalItemSpec": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
+      "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\trt1iypmh6-l79u8qdsdx.gz",
+      "SourceId": "dotnet-db",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/dotnet-db",
+      "RelativePath": "css/admin#[.{fingerprint=l79u8qdsdx}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\admin.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "n7fkzuflre",
+      "Integrity": "A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\admin.css"
+    },
+    {
       "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\u1hytlqp14-notf2xhcfb.gz",
       "SourceId": "dotnet-db",
       "SourceType": "Discovered",
@@ -1319,12 +1319,54 @@
       "OriginalItemSpec": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\styles.css",
+      "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\zzsfr37kbp-tpznpjr8xw.gz",
+      "SourceId": "dotnet-db",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/dotnet-db",
+      "RelativePath": "css/site#[.{fingerprint=tpznpjr8xw}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\site.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ly057v0iru",
+      "Integrity": "46jb08i/SFjaNkr1KegpGj/+YFoNsxeXt4DVqSjRg7s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\admin.css",
       "SourceId": "dotnet-db",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\",
       "BasePath": "_content/dotnet-db",
-      "RelativePath": "css/styles#[.{fingerprint}]?.css",
+      "RelativePath": "css/admin#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l79u8qdsdx",
+      "Integrity": "IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
+    },
+    {
+      "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\site.css",
+      "SourceId": "dotnet-db",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\",
+      "BasePath": "_content/dotnet-db",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1337,7 +1379,7 @@
       "Integrity": "kak1MEV3+LsLLgjENJBfRx+ELlD5NqSwrkc7mAPeKG0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
       "Identity": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\favicon.ico",
@@ -2980,8 +3022,306 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/styles.css",
-      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\78p31n0539-tpznpjr8xw.gz",
+      "Route": "css/admin.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\trt1iypmh6-l79u8qdsdx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.006172839506"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "161"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 Jan 2026 13:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "370"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 Jan 2026 13:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css.gz",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\trt1iypmh6-l79u8qdsdx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "161"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 Jan 2026 13:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.l79u8qdsdx.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\trt1iypmh6-l79u8qdsdx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.006172839506"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "161"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 Jan 2026 13:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l79u8qdsdx"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.l79u8qdsdx.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "370"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 Jan 2026 13:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l79u8qdsdx"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.l79u8qdsdx.css.gz",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\trt1iypmh6-l79u8qdsdx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "161"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 Jan 2026 13:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l79u8qdsdx"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-A/WewTj0aXUY5OgttXjUozWb17bc1NTPxBqxSsAoM9k="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\zzsfr37kbp-tpznpjr8xw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3035,8 +3375,8 @@
       ]
     },
     {
-      "Route": "css/styles.css",
-      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\styles.css",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3072,8 +3412,8 @@
       ]
     },
     {
-      "Route": "css/styles.css.gz",
-      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\78p31n0539-tpznpjr8xw.gz",
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\zzsfr37kbp-tpznpjr8xw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3117,8 +3457,8 @@
       ]
     },
     {
-      "Route": "css/styles.tpznpjr8xw.css",
-      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\78p31n0539-tpznpjr8xw.gz",
+      "Route": "css/site.tpznpjr8xw.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\zzsfr37kbp-tpznpjr8xw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3171,7 +3511,7 @@
         },
         {
           "Name": "label",
-          "Value": "css/styles.css"
+          "Value": "css/site.css"
         },
         {
           "Name": "integrity",
@@ -3180,8 +3520,8 @@
       ]
     },
     {
-      "Route": "css/styles.tpznpjr8xw.css",
-      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\styles.css",
+      "Route": "css/site.tpznpjr8xw.css",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3216,7 +3556,7 @@
         },
         {
           "Name": "label",
-          "Value": "css/styles.css"
+          "Value": "css/site.css"
         },
         {
           "Name": "integrity",
@@ -3225,8 +3565,8 @@
       ]
     },
     {
-      "Route": "css/styles.tpznpjr8xw.css.gz",
-      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\78p31n0539-tpznpjr8xw.gz",
+      "Route": "css/site.tpznpjr8xw.css.gz",
+      "AssetFile": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\Debug\\net9.0\\compressed\\zzsfr37kbp-tpznpjr8xw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3269,7 +3609,7 @@
         },
         {
           "Name": "label",
-          "Value": "css/styles.css.gz"
+          "Value": "css/site.css.gz"
         },
         {
           "Name": "integrity",

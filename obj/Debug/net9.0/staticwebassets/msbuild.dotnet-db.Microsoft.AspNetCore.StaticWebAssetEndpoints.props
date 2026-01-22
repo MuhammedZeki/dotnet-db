@@ -1,15 +1,27 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/dotnet-db/css/styles.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/dotnet-db/css/admin.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"370"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 22 Jan 2026 13:15:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/dotnet-db/css/admin.l79u8qdsdx.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"l79u8qdsdx"},{"Name":"integrity","Value":"sha256-IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU="},{"Name":"label","Value":"_content/dotnet-db/css/admin.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"370"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022IQobvCf/elRAvXoclZifcwJvQigDR3/ryoT9tiavSuU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 22 Jan 2026 13:15:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/dotnet-db/css/site.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kak1MEV3\u002BLsLLgjENJBfRx\u002BELlD5NqSwrkc7mAPeKG0="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1937"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kak1MEV3\u002BLsLLgjENJBfRx\u002BELlD5NqSwrkc7mAPeKG0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 Jan 2026 17:07:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/dotnet-db/css/styles.tpznpjr8xw.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/dotnet-db/css/site.tpznpjr8xw.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tpznpjr8xw"},{"Name":"integrity","Value":"sha256-kak1MEV3\u002BLsLLgjENJBfRx\u002BELlD5NqSwrkc7mAPeKG0="},{"Name":"label","Value":"_content/dotnet-db/css/styles.css"}]]]></EndpointProperties>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tpznpjr8xw"},{"Name":"integrity","Value":"sha256-kak1MEV3\u002BLsLLgjENJBfRx\u002BELlD5NqSwrkc7mAPeKG0="},{"Name":"label","Value":"_content/dotnet-db/css/site.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1937"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kak1MEV3\u002BLsLLgjENJBfRx\u002BELlD5NqSwrkc7mAPeKG0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 Jan 2026 17:07:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/dotnet-db/favicon.61n19gt1b8.ico">

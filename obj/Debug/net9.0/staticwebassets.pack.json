@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\styles.css",
-      "PackagePath": "staticwebassets\\css\\styles.css"
+      "Id": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\wwwroot\\favicon.ico",
