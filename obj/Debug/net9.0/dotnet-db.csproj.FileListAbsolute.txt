@@ -205,3 +205,4 @@ C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\dotnet-db.genrunti
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\ref\dotnet-db.dll
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\compressed\78p31n0539-tpznpjr8xw.gz
 C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\compressed\1tdlrjzu20-f6guyl0605.gz
+C:\Users\mzeki\OneDrive\Masaüstü\dotnet-db\obj\Debug\net9.0\dotnet-db.sourcelink.json

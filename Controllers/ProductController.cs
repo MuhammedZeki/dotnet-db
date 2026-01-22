@@ -25,20 +25,39 @@ public class ProductController : Controller
 
 
     [Route("list")]
-    public ActionResult List()
+    public ActionResult List(string? q)
     {
-        // var  product = _context.Products.FirstOrDefault(p => p.Id == id);
-        var product = _context.Products.ToList();
-        return View(product);
+        // var product = _context.Products.ToList();
+
+        // var query = _context.Products.AsQueryable();
+        var query = _context.Products.Where(i => i.IsActive);
+
+        if (!string.IsNullOrEmpty(q))
+        {
+            query = query.Where(i => i.Name.ToLower().Contains(q.ToLower()));
+        }
+
+        return View(query.ToList());
     }
 
 
     [Route("category/{url}")]
-    public ActionResult ListByCategory(string Url)
+    public ActionResult ListByCategory(string url, string? q)
     {
-        var products = _context.Products.Where(i => i.IsActive && i.Category.Url == Url).ToList();
+        // var products = _context.Products.Where(i => i.IsActive && i.Category.Url == url).ToList();
+        var query = _context.Products.Where(i => i.IsActive);
 
-        return View(products);
+        if (!string.IsNullOrEmpty(url))
+        {
+            query = query.Where(i => i.Category.Url == url);
+        }
+
+        if (!string.IsNullOrEmpty(q))
+        {
+            query = query.Where(i => i.Name.ToLower().Contains(q.ToLower()));
+        }
+
+        return View(query.ToList());
     }
 
     [Route("detail/{id}")]
