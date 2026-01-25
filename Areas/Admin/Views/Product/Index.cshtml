@@ -12,56 +12,74 @@
                 </a>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped mb-0">
-                        <thead class="table-secondary">
-                            <tr>
-                                <th style="width: 20px;">Id</th>
-                                <th style="width: 80px;">Resim</th>
-                                <th>Ürün Adı</th>
-                                <th>Fiyat</th>
-                                <th>Aktif</th>
-                                <th>Anasayfa</th>
-                                <th>Kategori</th>
-                                <th style="width: 90px;"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var i in @Model)
-                            {
+
+                <form method="get" asp-action="Index" asp-controller="Product">
+                    <div class="input-group mb-2">
+                        <select name="kategori" class="form-select" asp-items="ViewBag.Categories">
+                            <option value="" selected>Hepsi</option>
+                        </select>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+                @if (@Model.Count == 0)
+                {
+                    <p class="text-danger">Arağınız Kategoriye Uygun Ürün Bulunamadı</p>
+                }
+                else
+                {
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped mb-0">
+                            <thead class="table-secondary">
                                 <tr>
-                                    <td>@i.Id</td>
-                                    <td>
-                                        <img src="~/img/@i.Img" class="img-fluid" alt="@i.Name">
-                                    </td>
-                                    <td>@i.Name</td>
-                                    <td>@i.Price ₺</td>
-                                    <td>
-                                        <i
-                                            class="fa-solid @(i.IsActive 
-                                                                                                                                                                                                                                                                                                                                                           ? "fa-circle-check text-success" : "fa-circle-xmark text-danger")"></i>
-                                    </td>
-                                    <td>
-                                        <i
-                                            class="fa-solid @(i.IsHome 
-                                                                                                                                                                                                                                                                                                                                                           ? "fa-circle-check text-success" : "fa-circle-xmark text-danger")"></i>
-                                    </td>
-                                    <td>@i.CategoryName</td>
-                                    <td>
-                                        <a asp-controller="Product" asp-action="Edit" asp-route-id="@i.Id"
-                                            class="btn btn-primary btn-sm">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a asp-controller="Product" asp-action="Delete" asp-route-id="@i.Id"
-                                            class="btn btn-danger btn-sm">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </a>
-                                    </td>
+                                    <th style="width: 20px;">Id</th>
+                                    <th style="width: 80px;">Resim</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Fiyat</th>
+                                    <th>Aktif</th>
+                                    <th>Anasayfa</th>
+                                    <th>Kategori</th>
+                                    <th style="width: 90px;"></th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in @Model)
+                                {
+                                    <tr>
+                                        <td>@i.Id</td>
+                                        <td>
+                                            <img src="~/img/@i.Img" class="img-fluid" alt="@i.Name">
+                                        </td>
+                                        <td>@i.Name</td>
+                                        <td>@i.Price ₺</td>
+                                        <td>
+                                            <i
+                                                class="fa-solid @(i.IsActive ? "fa-circle-check text-success" : "fa-circle-xmark text-danger")"></i>
+                                        </td>
+                                        <td>
+                                            <i
+                                                class="fa-solid @(i.IsHome ? "fa-circle-check text-success" : "fa-circle-xmark text-danger")"></i>
+                                        </td>
+                                        <td>@i.CategoryName</td>
+                                        <td>
+                                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@i.Id"
+                                                class="btn btn-primary btn-sm">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@i.Id"
+                                                class="btn btn-danger btn-sm">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
             </div>
         </div>
     </div>

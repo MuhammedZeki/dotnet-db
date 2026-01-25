@@ -8,5 +8,6 @@ public class ProductGetModel
     public bool IsHome { get; set; }
     public bool IsActive { get; set; }
     public string? Img { get; set; }
+    public int Count { get; set; }
     public string CategoryName { get; set; } = null!;
 }

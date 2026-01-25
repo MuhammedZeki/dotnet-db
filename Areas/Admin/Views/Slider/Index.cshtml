@@ -1,0 +1,56 @@
+@{
+    Layout = "_AdminLayout";
+}
+@model List<SliderGetModel>
+<div class="row">
+    <div class="col">
+        <div class="card shadow">
+            <div class="card-header py-1 d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Sliderlar</h5>
+                <a asp-controller="Slider" asp-action="Create" class="btn btn-sm btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped mb-0">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th style="width: 20px;">Id</th>
+                                <th style="width: 200px;">Resim</th>
+                                <th>Başlık</th>
+                                <th>Aktif</th>
+                                <th>Index</th>
+                                <th style="width: 50px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var i in @Model)
+                            {
+                                <tr>
+                                    <td>@i.Id</td>
+                                    <td>
+                                        <img src="~/img/@i.Image" class="img-fluid" alt="@i.Title">
+                                    </td>
+                                    <td>@i.Title</td>
+                                    <td>
+                                        <i
+                                            class="fa-solid @(i.IsActive ? "fa-circle-check text-success" : "fa-circle-xmark text-danger")"></i>
+                                    </td>
+                                    <td>@i.Index</td>
+                                    <td>
+                                        <a asp-controller="Slider" asp-action="Edit" asp-route-id="@i.Id"
+                                            class="btn btn-primary btn-sm">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

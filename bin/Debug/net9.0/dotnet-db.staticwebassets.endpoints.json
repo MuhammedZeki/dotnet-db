@@ -2209,6 +2209,88 @@
       ]
     },
     {
+      "Route": "img/fk4laetp.z3t.azixeoasu5.jpg",
+      "AssetFile": "img/fk4laetp.z3t.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qlNafb+8wBvm8hZ6UpmBcCHZ25TWElGOt1oVcZEmTiQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 Jan 2026 17:21:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "azixeoasu5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qlNafb+8wBvm8hZ6UpmBcCHZ25TWElGOt1oVcZEmTiQ="
+        },
+        {
+          "Name": "label",
+          "Value": "img/fk4laetp.z3t.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "img/fk4laetp.z3t.jpg",
+      "AssetFile": "img/fk4laetp.z3t.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qlNafb+8wBvm8hZ6UpmBcCHZ25TWElGOt1oVcZEmTiQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 Jan 2026 17:21:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qlNafb+8wBvm8hZ6UpmBcCHZ25TWElGOt1oVcZEmTiQ="
+        }
+      ]
+    },
+    {
       "Route": "img/qj4bvtpb.2oj.jpg",
       "AssetFile": "img/qj4bvtpb.2oj.jpg",
       "Selectors": [],

@@ -18,9 +18,15 @@ public class ProductController : Controller
     }
 
     [HttpGet("")]
-    public ActionResult Index()
+    public ActionResult Index(int? kategori)
     {
-        var products = _context.Products.Select(i => new ProductGetModel
+
+        var query = _context.Products.AsQueryable();
+        if (kategori != null)
+        {
+            query = query.Where(i => i.CategoryId == kategori);
+        }
+        var products = query.Select(i => new ProductGetModel
         {
             Id = i.Id,
             Name = i.Name,
@@ -28,8 +34,12 @@ public class ProductController : Controller
             IsHome = i.IsHome,
             Img = i.Img,
             IsActive = i.IsActive,
-            CategoryName = i.Category.CategoryName
+            CategoryName = i.Category.CategoryName,
+            Count = i.Category.Products.Count()
         }).ToList();
+
+        ViewBag.Categories = new SelectList(_context.Categories.ToList(), "Id", "CategoryName", kategori);
+
         return View(products);
     }
 
@@ -98,6 +108,7 @@ public class ProductController : Controller
 
         return View(product);
     }
+
 
     [HttpPost("edit/{id}")]
     public async Task<ActionResult> Edit(int id, ProductEditModel model)
