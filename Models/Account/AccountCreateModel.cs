@@ -7,7 +7,7 @@ public class AccountCreateModel
 {
     [Display(Name = "Kullanıcı Adı")]
     [Required(ErrorMessage = "Lütfen kullanıcı adı giriniz!")]
-    public string UserName { get; set; } = null!;
+    public string FullName { get; set; } = null!;
 
     [Display(Name = "E-Posta")]
     [Required(ErrorMessage = "Lütfen e-posta adresinizi giriniz!")]

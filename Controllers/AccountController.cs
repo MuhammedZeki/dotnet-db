@@ -9,9 +9,9 @@ public class AccountController : Controller
 {
 
 
-    private UserManager<IdentityUser> _userManager;
+    private UserManager<AppUser> _userManager;
 
-    public AccountController(UserManager<IdentityUser> userManager)
+    public AccountController(UserManager<AppUser> userManager)
     {
         _userManager = userManager;
     }
@@ -28,10 +28,11 @@ public class AccountController : Controller
         if (ModelState.IsValid)
         {
 
-            var user = new IdentityUser
+            var user = new AppUser
             {
-                UserName = model.UserName,
+                UserName = model.Email,
                 Email = model.Email,
+                FullName = model.FullName
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);

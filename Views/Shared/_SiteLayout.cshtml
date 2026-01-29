@@ -12,7 +12,10 @@
 
 <body class="bg-light">
 
-    @await Html.PartialAsync("Partials/Site/_Header")
+    <header>
+        @await Html.PartialAsync("Partials/Site/_TopBar")
+        @RenderSection("Bar", required: false)
+    </header>
 
     @RenderBody()
 

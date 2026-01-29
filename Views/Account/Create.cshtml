@@ -1,5 +1,23 @@
 @model AccountCreateModel
 
+@section Bar {
+    <section class="bg-primary py-3">
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="#">Anasayfa</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Hesap Oluşturma</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+}
+
+
 <section class="my-3">
     <div class="container">
         <div class="row justify-content-center">
@@ -9,9 +27,9 @@
                         <form method="post" asp-controller="Account" asp-action="Create" novalidate>
                             <div asp-validation-summary="All" class="text-danger"></div>
                             <div class="mb-3">
-                                <label asp-for="UserName" class="form-label"></label>
-                                <input asp-for="UserName" class="form-control">
-                                <span asp-validation-for="UserName" class="text-danger"></span>
+                                <label asp-for="FullName" class="form-label"></label>
+                                <input asp-for="FullName" class="form-control">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <label asp-for="Email" class="form-label"></label>
