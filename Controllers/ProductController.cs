@@ -78,4 +78,5 @@ public class ProductController : Controller
 
         return View(product);
     }
+
 }

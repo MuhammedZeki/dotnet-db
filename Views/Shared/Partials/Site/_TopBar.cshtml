@@ -17,15 +17,20 @@
     <div class="container">
         <div class="row gy-2 align-items-center">
             <div class="col-lg-2 col-sm-4 col-4">
-                <a href="/" class="navbar-brand"><i class="fa-solid fa-truck-fast"></i> E-Commerce</a>
+                <a href="/" class="navbar-brand"><i class="fa-solid fa-truck-fast"></i>E-Commerce</a>
             </div>
 
             <div class="col-lg-5 col-sm-8 col-8 order-lg-last">
                 <div class="text-end">
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-
-                        <a asp-controller="Account" asp-action="Settings" class="btn btn-light">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-controller="Admin" asp-action="Index" class="btn btn-danger">
+                                <i class="fa-solid fa-lock"></i> <span class="ms-1 d-none d-sm-inline-block">Admin</span>
+                            </a>
+                        }
+                        <a asp-controller="Account" asp-action="UserEdit" class="btn btn-light">
                             <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Hesabım</span>
                         </a>
                         <a href="#" class="btn btn-light">

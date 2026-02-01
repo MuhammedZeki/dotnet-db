@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using dotnet_db.Validation;
 
 namespace dotnet_db.Models;
 
@@ -21,12 +22,12 @@ public class UserEditModel
 
     [Display(Name = "Şifre")]
     [DataType(DataType.Password)]
-    public string Password { get; set; } = null!;
+    public string? Password { get; set; } = null!;
 
     [Display(Name = "Şifre Tekrar")]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage = "Şifreler birbiriyle uyuşmuyor!")]
-    public string ConfirmPassword { get; set; } = null!;
+    [PasswordMatchIfFilled]
+    public string? ConfirmPassword { get; set; } = null!;
 
     public IList<string> SelectedRoles { get; set; } = null!;
 }

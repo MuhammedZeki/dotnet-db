@@ -1,8 +1,8 @@
+using System.Security.Claims;
 using dotnet_db.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace dotnet_db.Controllers;
 
@@ -113,18 +113,65 @@ public class AccountController : Controller
 
 
     [Authorize]
-    [HttpGet("settings")]
-    public ActionResult Settings()
-    {
-        return View();
-    }
-
-
-    [Authorize]
+    [HttpGet("logout")]
     public async Task<ActionResult> Logout()
     {
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
 
+    [HttpGet("access-denied")]
+    public ActionResult AccessDenied()
+    {
+        return View();
+    }
+
+    [Authorize]
+    [HttpGet("settings/user-edit")]
+    public async Task<ActionResult> UserEdit()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var user = await _userManager.FindByIdAsync(userId!);
+
+        return View(
+            new AccountEditUserModel
+            {
+                FullName = user.FullName,
+                Email = user.Email!
+            }
+        );
+    }
+
+
+    [Authorize]
+    [HttpPost("settings/user-edit")]
+    public async Task<ActionResult> UserEdit(AccountEditUserModel model)
+    {
+
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); //Giriş yapan kull. id'si
+        var user = await _userManager.FindByIdAsync(userId!);
+
+        if (ModelState.IsValid)
+        {
+            if (user != null)
+            {
+                user.FullName = model.FullName;
+                user.Email = model.Email;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    TempData["message"] = "Bilgileriniz güncellendi!";
+                }
+
+                foreach (var err in result.Errors)
+                {
+                    ModelState.AddModelError("", err.Description);
+                }
+            }
+
+        }
+        return View(model);
+    }
 }
