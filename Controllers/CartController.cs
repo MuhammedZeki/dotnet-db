@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace dotnet_db.Controllers;
 
 
-
+[Route("cart")]
 public class CartController : Controller
 {
     private readonly DataContext _context;
@@ -17,25 +17,22 @@ public class CartController : Controller
         _context = context;
     }
 
+    [HttpGet("")]
+    public async Task<ActionResult> Index()
+    {
+        var cart = await GetCard();
+        return View(cart);
+    }
+
+
+
 
     [Authorize]
     [HttpPost]
     public async Task<ActionResult> AddToCart(int productId, int quantity = 1)
     {
 
-        var customerId = User.Identity?.Name;
-
-        var cart = await _context.Cards
-                                .Include(i => i.CardItems)
-                                .Where(i => i.CustomerId == customerId)
-                                .FirstOrDefaultAsync();
-
-        if (cart == null)
-        {
-            cart = new Card { CustomerId = customerId! };
-            _context.Cards.Add(cart);
-        }
-
+        var cart = await GetCard();
 
         var item = cart.CardItems.Where(i => i.ProductId == productId).FirstOrDefault();
 
@@ -59,4 +56,25 @@ public class CartController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+
+
+    private async Task<Card> GetCard()
+    {
+        var customerId = User.Identity?.Name;
+
+        var cart = await _context.Cards
+                                .Include(i => i.CardItems)
+                                .ThenInclude(i => i.Product)
+                                .Where(i => i.CustomerId == customerId)
+                                .FirstOrDefaultAsync();
+
+        if (cart == null)
+        {
+            cart = new Card { CustomerId = customerId! };
+            _context.Cards.Add(cart);
+        }
+
+        return cart;
+    }
+
 }
