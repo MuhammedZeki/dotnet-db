@@ -24,11 +24,8 @@ public class CartController : Controller
         return View(cart);
     }
 
-
-
-
     [Authorize]
-    [HttpPost]
+    [HttpPost("add-to-cart")]
     public async Task<ActionResult> AddToCart(int productId, int quantity = 1)
     {
 
@@ -54,7 +51,24 @@ public class CartController : Controller
         await _context.SaveChangesAsync();
 
 
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost("remove-item")]
+    public async Task<ActionResult> RemoveItem(int cartItemId)
+    {
+
+        var cart = await GetCard();
+
+        var res = cart.CardItems.Where(i => i.Id == cartItemId).FirstOrDefault();
+
+        if (res != null)
+        {
+            cart.CardItems.Remove(res);
+            await _context.SaveChangesAsync();
+        }
+
+        return RedirectToAction("Index");
     }
 
 

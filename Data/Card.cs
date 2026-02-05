@@ -7,6 +7,16 @@ public class Card
     public string CustomerId { get; set; } = null!;
 
     public List<CardItem> CardItems { get; set; } = [];
+
+    public double SubTotal()
+    {
+        return CardItems.Sum(i => i.Product.Price * i.Quantity);
+    }
+
+    public double TotalPrice()
+    {
+        return CardItems.Sum(i => i.Product.Price * i.Quantity) * 1.2;
+    }
 }
 
 
