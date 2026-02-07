@@ -30,43 +30,49 @@ public class CartController : Controller
 
         var cart = await GetCard();
 
-        var item = cart.CardItems.Where(i => i.ProductId == productId).FirstOrDefault();
+        var product = await _context.Products.FirstOrDefaultAsync(i => i.Id == productId);
 
-
-        if (item != null)
+        if (product != null)
         {
-            item.Quantity += 1;
-
-        }
-        else
-        {
-            cart.CardItems.Add(new CardItem
-            {
-                ProductId = productId,
-                Quantity = quantity
-            });
+            cart.AddItemCart(product, quantity);
+            await _context.SaveChangesAsync();
         }
 
         await _context.SaveChangesAsync();
-
 
         return RedirectToAction("Index");
     }
 
     [HttpPost("remove-item")]
-    public async Task<ActionResult> RemoveItem(int cartItemId)
+    public async Task<ActionResult> Remove(int cartItemId)
     {
+
 
         var cart = await GetCard();
 
-        var res = cart.CardItems.Where(i => i.Id == cartItemId).FirstOrDefault();
+        cart.RemoveItem(cartItemId);
 
-        if (res != null)
-        {
-            cart.CardItems.Remove(res);
-            await _context.SaveChangesAsync();
-        }
+        await _context.SaveChangesAsync();
 
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost("increase-item")]
+    public async Task<ActionResult> Increase(int cartItemId)
+    {
+        var cart = await GetCard();
+        cart.InceareItem(cartItemId);
+        await _context.SaveChangesAsync();
+        return RedirectToAction("Index");
+
+    }
+
+    [HttpPost("decrease-item")]
+    public async Task<ActionResult> Decrease(int cartItemId)
+    {
+        var cart = await GetCard();
+        cart.DecreaseItem(cartItemId);
+        await _context.SaveChangesAsync();
         return RedirectToAction("Index");
     }
 
