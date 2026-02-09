@@ -1,0 +1,177 @@
+@model Order
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+            <div class="card-body py-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div style="width: 5px; height: 25px; background: #2ed573; border-radius: 10px;" class="me-3"></div>
+                    <h5 class="fw-bold mb-0">Sipariş #@Model.Id <span class="text-muted fw-normal ms-2 small">| @Model.OrderDate.ToString("g")</span></h5>
+                </div>
+                <div class="d-flex align-items-center">
+                    @switch (Model.Status)
+                    {
+                        case OrderStatus.Pending:
+                            <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill border border-warning border-opacity-25">Beklemede</span>
+                            break;
+                        case OrderStatus.Shipping:
+                            <span class="badge bg-info-subtle text-info px-3 py-2 rounded-pill border border-info border-opacity-25">Kargoda</span>
+                            break;
+                        case OrderStatus.Completed:
+                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill border border-success border-opacity-25">Tamamlandı</span>
+                            break;
+                        case OrderStatus.Cancelled:
+                            <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill border border-danger border-opacity-25">İptal Edildi</span>
+                            break;
+                    }
+                    <a asp-action="Index" class="btn btn-light btn-sm rounded-pill ms-3 border shadow-sm">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-8">
+        <div class="card border-0 shadow-sm mb-4" style="border-radius: 15px;">
+            <div class="card-header bg-white border-0 py-3">
+                <h6 class="fw-bold mb-0"><i class="fa-solid fa-basket-shopping me-2 text-primary"></i>Sipariş İçeriği</h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="ps-4 border-0 small text-uppercase text-muted">Ürün</th>
+                                <th class="border-0 small text-uppercase text-muted text-center">Adet</th>
+                                <th class="border-0 small text-uppercase text-muted text-end pe-4">Toplam</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderItems)
+                            {
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center">
+                                            <img src="~/img/@item.Product.Img" class="rounded-3 border me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                            <div>
+                                                <div class="fw-bold text-dark" style="font-size: 0.9rem;">@item.Product.Name</div>
+                                                <small class="text-muted">@item.Price.ToString("C2")</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center fw-bold text-muted">@item.Quantity</td>
+                                    <td class="text-end pe-4 fw-bold text-dark">@((item.Price * item.Quantity).ToString("C2"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer bg-light bg-opacity-50 border-0 p-4">
+                <div class="row justify-content-end">
+                    <div class="col-md-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted small">Ara Toplam:</span>
+                            <span class="fw-bold">@Model.SubTotal().ToString("C2")</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted small">KDV (%20):</span>
+                            <span class="fw-bold">@((Model.SubTotal() * 0.2).ToString("C2") )</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted small">Kargo:</span>
+                            <span class="text-success fw-bold small">Ücretsiz</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="d-flex justify-content-between">
+                            <span class="fw-bold text-dark">Genel Toplam:</span>
+                            <span class="h5 fw-bold text-primary mb-0">@Model.TotalPrice.ToString("C2")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.OrderNote))
+        {
+            <div class="card border-0 shadow-sm mb-4" style="border-radius: 15px; border-left: 5px solid #0984e3 !important;">
+                <div class="card-body">
+                    <h6 class="fw-bold small text-uppercase text-muted mb-2">Müşteri Notu</h6>
+                    <p class="mb-0 text-dark italic small">"@Model.OrderNote"</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-xl-4">
+        <div class="card border-0 shadow-sm mb-4" style="border-radius: 15px;">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3 small text-uppercase text-muted">Durum Yönetimi</h6>
+                <form asp-action="UpdateStatus" method="post">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <select name="newStatus" class="form-select form-select-sm mb-3 rounded-3 shadow-none border-light bg-light">
+                        <option value="0" selected="@(Model.Status == OrderStatus.Pending)">Beklemede</option>
+                        <option value="1" selected="@(Model.Status == OrderStatus.Shipping)">Kargoya Ver</option>
+                        <option value="2" selected="@(Model.Status == OrderStatus.Completed)">Teslim Edildi</option>
+                        <option value="3" selected="@(Model.Status == OrderStatus.Cancelled)">İptal Et</option>
+                    </select>
+                    <button type="submit" class="btn btn-dark btn-sm w-100 rounded-pill shadow-sm">Durumu Güncelle</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4" style="border-radius: 15px;">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3 small text-uppercase text-muted">Teslimat Detayları</h6>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                        <i class="fa-solid fa-user text-primary"></i>
+                    </div>
+                    <div>
+                        <div class="small text-muted">Alıcı</div>
+                        <div class="fw-bold text-dark">@Model.Fullname</div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                        <i class="fa-solid fa-phone text-primary"></i>
+                    </div>
+                    <div>
+                        <div class="small text-muted">Telefon</div>
+                        <div class="fw-bold text-dark">@Model.Phone</div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                        <i class="fa-solid fa-location-dot text-primary"></i>
+                    </div>
+                    <div>
+                        <div class="small text-muted">Adres</div>
+                        <div class="small fw-bold text-dark">@Model.Address</div>
+                        <div class="small text-muted">@Model.City / @Model.PostalCode</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm text-white" style="border-radius: 15px; background: linear-gradient(45deg, #2d3436, #636e72);">
+            <div class="card-body text-center py-4">
+                <i class="fa-brands fa-cc-visa fs-1 mb-2"></i>
+                <div class="small opacity-75">Kredi Kartı ile Ödendi</div>
+                <div class="fw-bold mt-1">**** **** **** 4242</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-success-subtle { background-color: #e3f9eb !important; }
+    .bg-warning-subtle { background-color: #fff9db !important; }
+    .bg-info-subtle { background-color: #e3f2fd !important; }
+    .bg-danger-subtle { background-color: #fff5f5 !important; }
+    .table tbody tr:hover { background-color: #fcfcfc; }
+</style>

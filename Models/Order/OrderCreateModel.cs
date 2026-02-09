@@ -9,10 +9,6 @@ public class OrderCreateModel
     [Required(ErrorMessage = "Lütfen adınızı ve soyadınızı giriniz.")]
     public string Fullname { get; set; } = null!;
 
-    [Display(Name = "E-Posta Adresi")]
-    [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
-    public string Email { get; set; } = null!;
-
     [Display(Name = "Telefon Numarası")]
     [Phone(ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
     public string Phone { get; set; } = null!;
@@ -29,7 +25,7 @@ public class OrderCreateModel
     public string Address { get; set; } = null!;
 
     [Display(Name = "Sipariş Notu")]
-    public string OrderNote { get; set; } = null!;
+    public string? OrderNote { get; set; }
 
     [Display(Name = "Posta Kodu")]
     [Required(ErrorMessage = "Posta kodunu giriniz.")]

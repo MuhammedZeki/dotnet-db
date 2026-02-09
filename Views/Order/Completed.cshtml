@@ -1,0 +1,144 @@
+@model string
+
+@section Bar {
+    <section class="py-4 shadow-sm"
+             style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-bottom: 2px solid #fbc531;">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="text-decoration-none d-inline-flex align-items-center breadcrumb-link">
+                            <i class="fa-solid fa-house me-2"></i>Anasayfa
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active d-inline-flex align-items-center" aria-current="page">
+                        Sipariş Onayı
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <style>
+            .breadcrumb-link {
+                color: rgba(255, 255, 255, 0.7) !important;
+                transition: all 0.3s ease;
+                font-size: 0.95rem;
+            }
+
+            .breadcrumb-link:hover {
+                color: #fbc531 !important;
+                transform: translateX(-2px);
+            }
+
+            .breadcrumb-item.active {
+                color: #fbc531 !important;
+                font-weight: 600;
+                font-size: 0.95rem;
+            }
+
+            .breadcrumb-item+.breadcrumb-item::before {
+                color: rgba(255, 255, 255, 0.3) !important;
+                content: "\f105";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                padding: 0 10px;
+            }
+    </style>
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-lg text-center p-4 p-md-5" style="border-radius: 30px;">
+                <div class="mb-4">
+                    <div class="success-checkmark d-inline-block">
+                        <div class="check-icon shadow-sm">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="display-6 fw-bold text-dark mb-3">Siparişiniz Alındı!</h1>
+                <p class="text-muted fs-5 mb-4">
+                    Teşekkür ederiz. <span
+                    class="badge bg-soft-warning text-dark p-2 px-3 rounded-pill fw-bold">#@Model</span> numaralı
+                    siparişiniz başarıyla sisteme kaydedildi.
+                </p>
+
+                <div class="alert alert-light border-0 py-3 mb-4"
+                     style="background-color: #f8f9fa; border-radius: 15px;">
+                    <small class="text-muted d-block mb-2">Sipariş detaylarını içeren bir e-posta tarafınıza
+                        gönderilecektir.</small>
+                        <div class="progress" style="height: 6px; border-radius: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                 style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="/" class="btn btn-outline-secondary px-4 py-2 rounded-pill fw-bold border-2">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>Alışverişe Devam Et
+                        </a>
+                        <a href="#" class="btn btn-primary px-4 py-2 rounded-pill fw-bold shadow-sm border-0"
+                               style="background: #1a1a2e;">
+                            <i class="fa-solid fa-box-open me-2 text-warning"></i>Siparişlerimi Görüntüle
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            background: #10ac84;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            animation: scaleIn 0.5s cubic-bezier(0.12, 0, 0.39, 0) forwards;
+        }
+
+        .bg-soft-warning {
+            background-color: #fef5d7;
+        }
+
+        .card {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @@keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @@keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>

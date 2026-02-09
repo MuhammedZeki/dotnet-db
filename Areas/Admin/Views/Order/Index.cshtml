@@ -1,0 +1,145 @@
+@model List<Order>
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card border-0 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+            <div class="card-header bg-white border-0 py-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div style="width: 5px; height: 30px; background: #2ed573; border-radius: 10px;" class="me-3"></div>
+                    <div>
+                        <h5 class="card-title fw-bold mb-0 text-dark">Sipariş Yönetimi</h5>
+                        <small class="text-muted">Sistemdeki tüm müşteri taleplerini buradan yönetebilirsiniz.</small>
+                    </div>
+                </div>
+                <div class="d-none d-md-flex gap-2">
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">
+                        <i class="fa-solid fa-box text-primary me-1"></i> Toplam: @Model.Count
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead style="background: #f8f9fa;">
+                            <tr>
+                                <th class="ps-4 border-0 text-uppercase small fw-bolder text-muted" style="font-size: 0.75rem;">ID</th>
+                                <th class="border-0 text-uppercase small fw-bolder text-muted" style="font-size: 0.75rem;">Müşteri</th>
+                                <th class="border-0 text-uppercase small fw-bolder text-muted" style="font-size: 0.75rem;">Tarih</th>
+                                <th class="border-0 text-uppercase small fw-bolder text-muted text-center" style="font-size: 0.75rem;">Tutar</th>
+                                <th class="border-0 text-uppercase small fw-bolder text-muted text-center" style="font-size: 0.75rem;">Durum</th>
+                                <th class="border-0 text-end pe-4" style="width: 100px;">İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="ps-4">
+                                        <span class="fw-bold text-secondary">#@item.Id</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-2 shadow-sm" style="width: 35px; height: 35px;">
+                                                <i class="fa-solid fa-user-circle text-muted"></i>
+                                            </div>
+                                            <span class="fw-bold text-dark">@item.Username</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="small">
+                                            <i class="fa-regular fa-calendar me-1 text-muted"></i> @item.OrderDate.ToString("dd.MM.yyyy")
+                                            <div class="text-muted" style="font-size: 0.7rem;">@item.OrderDate.ToString("HH:mm")</div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="fw-bolder text-dark">@item.TotalPrice.ToString("C2")</span>
+                                    </td>
+                                    <td>
+    @switch (item.Status)
+{
+    case OrderStatus.Pending:
+        <span class="badge bg-warning text-dark border border-warning border-opacity-25 px-3 py-2 rounded-pill">
+            <i class="fa-solid fa-clock me-1"></i> Beklemede
+        </span>
+        break;
+    case OrderStatus.Shipping:
+        <span class="badge bg-info text-white px-3 py-2 rounded-pill shadow-sm">
+            <i class="fa-solid fa-truck me-1"></i> Kargoda
+        </span>
+        break;
+    case OrderStatus.Completed:
+        <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill border border-success border-opacity-25">
+            <i class="fa-solid fa-check-double me-1"></i> Teslim Edildi
+        </span>
+        break;
+    case OrderStatus.Cancelled:
+        <span class="badge bg-danger text-white px-3 py-2 rounded-pill shadow-sm">
+            <i class="fa-solid fa-ban me-1"></i> İptal Edildi
+        </span>
+        break;
+}
+</td>
+                                    <td class="text-end pe-4">
+                                        <a asp-controller="Order" asp-action="Detail" asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-white border shadow-sm rounded-circle detail-btn" title="Detaylar">
+                                            <i class="fa-solid fa-chevron-right text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-footer bg-white border-0 py-3 text-end">
+                <small class="text-muted">
+                    <i class="fa-solid fa-clock-rotate-left me-1"></i> Veriler gerçek zamanlı olarak güncellenmektedir.
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .detail-btn {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        background: #fff;
+    }
+
+    .detail-btn:hover {
+        background-color: #f1f2f6;
+        transform: translateX(3px);
+    }
+
+    .table tbody tr {
+        transition: background 0.2s;
+        border-bottom: 1px solid #f1f2f6;
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(46, 213, 115, 0.03);
+    }
+
+    .bg-success-subtle {
+        background-color: #e3f9eb !important;
+    }
+
+    .card {
+        animation: fadeIn 0.4s ease-out;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
