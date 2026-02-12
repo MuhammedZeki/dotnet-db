@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\dotnet-db.csproj": {}
+    "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\WorkinTech\\dotnet-db\\dotnet-db.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\dotnet-db.csproj": {
+    "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\WorkinTech\\dotnet-db\\dotnet-db.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\dotnet-db.csproj",
+        "projectUniqueName": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\WorkinTech\\dotnet-db\\dotnet-db.csproj",
         "projectName": "dotnet-db",
-        "projectPath": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\dotnet-db.csproj",
+        "projectPath": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\WorkinTech\\dotnet-db\\dotnet-db.csproj",
         "packagesPath": "C:\\Users\\mzeki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\dotnet-db\\obj\\",
+        "outputPath": "C:\\Users\\mzeki\\OneDrive\\Masaüstü\\WorkinTech\\dotnet-db\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mzeki\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Iyzipay": {
+              "target": "Package",
+              "version": "[2.1.74, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"

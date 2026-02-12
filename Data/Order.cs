@@ -26,6 +26,10 @@ public class Order
     {
         return OrderItems.Sum(i => i.Price * i.Quantity);
     }
+    public double Total()
+    {
+        return OrderItems.Sum(i => i.Price * i.Quantity) * 1.2;
+    }
 
 }
 

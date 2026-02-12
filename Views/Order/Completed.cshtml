@@ -20,30 +20,30 @@
     </section>
 
     <style>
-            .breadcrumb-link {
-                color: rgba(255, 255, 255, 0.7) !important;
-                transition: all 0.3s ease;
-                font-size: 0.95rem;
-            }
+                .breadcrumb-link {
+                    color: rgba(255, 255, 255, 0.7) !important;
+                    transition: all 0.3s ease;
+                    font-size: 0.95rem;
+                }
 
-            .breadcrumb-link:hover {
-                color: #fbc531 !important;
-                transform: translateX(-2px);
-            }
+                .breadcrumb-link:hover {
+                    color: #fbc531 !important;
+                    transform: translateX(-2px);
+                }
 
-            .breadcrumb-item.active {
-                color: #fbc531 !important;
-                font-weight: 600;
-                font-size: 0.95rem;
-            }
+                .breadcrumb-item.active {
+                    color: #fbc531 !important;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                }
 
-            .breadcrumb-item+.breadcrumb-item::before {
-                color: rgba(255, 255, 255, 0.3) !important;
-                content: "\f105";
-                font-family: "Font Awesome 6 Free";
-                font-weight: 900;
-                padding: 0 10px;
-            }
+                .breadcrumb-item+.breadcrumb-item::before {
+                    color: rgba(255, 255, 255, 0.3) !important;
+                    content: "\f105";
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    padding: 0 10px;
+                }
     </style>
 }
 
@@ -80,7 +80,8 @@
                         <a href="/" class="btn btn-outline-secondary px-4 py-2 rounded-pill fw-bold border-2">
                             <i class="fa-solid fa-cart-shopping me-2"></i>Alışverişe Devam Et
                         </a>
-                        <a href="#" class="btn btn-primary px-4 py-2 rounded-pill fw-bold shadow-sm border-0"
+                        <a asp-action="OrderList" asp-controller="Order"
+                               class="btn btn-primary px-4 py-2 rounded-pill fw-bold shadow-sm border-0"
                                style="background: #1a1a2e;">
                             <i class="fa-solid fa-box-open me-2 text-warning"></i>Siparişlerimi Görüntüle
                         </a>

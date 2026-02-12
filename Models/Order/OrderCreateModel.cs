@@ -30,4 +30,13 @@ public class OrderCreateModel
     [Display(Name = "Posta Kodu")]
     [Required(ErrorMessage = "Posta kodunu giriniz.")]
     public string PostalCode { get; set; } = null!;
+
+
+    public string CartName { get; set; } = null!;
+    public string CartNumber { get; set; } = null!;
+    public string CartExpirationYear { get; set; } = null!;
+    public string CartExpirationMonth { get; set; } = null!;
+    public string CartCVV { get; set; } = null!;
+
+
 }

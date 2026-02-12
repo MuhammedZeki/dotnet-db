@@ -1,0 +1,148 @@
+@model List<Order>
+
+@section Bar {
+    <section class="py-3 shadow-sm"
+             style="background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="text-decoration-none d-inline-flex align-items-center breadcrumb-link">
+                            <i class="fa-solid fa-house me-2"></i>Anasayfa
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active d-inline-flex align-items-center" aria-current="page">
+                        Sipariş Geçmişi
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <style>
+        .breadcrumb-link { color: rgba(255, 255, 255, 0.6) !important; transition: 0.3s; font-size: 0.9rem; }
+        .breadcrumb-link:hover { color: #fff !important; }
+        .breadcrumb-item.active { color: #fbc531 !important; font-weight: 600; font-size: 0.9rem; }
+        .breadcrumb-item+.breadcrumb-item::before { color: rgba(255, 255, 255, 0.3) !important; content: "\f105"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    </style>
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="sticky-top" style="top: 20px;">
+                @await Html.PartialAsync("Partials/Site/_AccountSideBar")
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h4 class="fw-bold mb-0">Sipariş Geçmişi</h4>
+                <span class="badge bg-soft-primary text-primary px-3 py-2">Toplam @Model.Count Sipariş</span>
+            </div>
+
+            @if (Model.Count == 0)
+            {
+                <div class="text-center py-5 border rounded-4 bg-white shadow-sm">
+                    <i class="bi bi-cart-x display-1 text-muted mb-3"></i>
+                    <h5 class="text-muted">Henüz hiç sipariş vermediniz.</h5>
+                    <a href="/" class="btn btn-primary mt-3 px-4 rounded-pill">Alışverişe Başla</a>
+                </div>
+            }
+
+            <div class="accordion custom-order-accordion" id="orders">
+                @foreach (var order in Model)
+                {
+                    <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="accordion-header">
+                            <button class="accordion-button collapsed p-4" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#order_@order.Id">
+                                <div class="row w-100 align-items-center g-3">
+                                    <div class="col-md-3">
+                                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Sipariş No</div>
+                                        <div class="fw-bold text-dark">#@order.Id</div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Tarih</div>
+                                        <div class="text-dark small">@order.OrderDate.ToString("dd MMM yyyy")</div>
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        @switch (order.Status)
+                                        {
+                                            case OrderStatus.Pending: <span class="status-badge bg-warning-soft">Beklemede</span> break;
+                                            case OrderStatus.Shipping: <span class="status-badge bg-info-soft">Kargoda</span> break;
+                                            case OrderStatus.Completed: <span class="status-badge bg-success-soft">Teslim Edildi</span> break;
+                                            case OrderStatus.Cancelled: <span class="status-badge bg-danger-soft">İptal Edildi</span> break;
+                                        }
+                                    </div>
+                                    <div class="col-md-3 text-end pe-4">
+                                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Toplam</div>
+                                        @* 1.000,00 ₺ Formatı *@
+                                        <div class="fw-bold text-primary fs-5">@order.Total().ToString("#,##0.00") ₺</div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div id="order_@order.Id" class="accordion-collapse collapse" data-bs-parent="#orders">
+                            <div class="accordion-body p-4 bg-white border-top">
+                                <div class="row mb-4 g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded-3 h-100 border shadow-sm">
+                                            <h6 class="fw-bold mb-2 small text-uppercase text-primary">Teslimat Adresi</h6>
+                                            <p class="small mb-0 text-muted">
+                                                <strong>@order.Fullname</strong><br>
+                                                @order.Address<br>
+                                                @order.City / @order.Phone
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded-3 h-100 border shadow-sm">
+                                            <h6 class="fw-bold mb-2 small text-uppercase text-primary">Özet</h6>
+                                            <div class="d-flex justify-content-between small mb-1">
+                                                <span>Ara Toplam:</span>
+                                                <span class="fw-medium">@order.SubTotal().ToString("#,##0.00") ₺</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between fw-bold text-dark border-top pt-2 mt-2">
+                                                <span>Genel Toplam:</span>
+                                                <span class="text-primary">@order.Total().ToString("#,##0.00") ₺</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-list">
+                                    @foreach (var item in order.OrderItems)
+                                    {
+                                        <div class="d-flex align-items-center py-3 border-bottom last-child-border-0">
+                                            <img src="~/img/@item.Product.Img" class="rounded-3 border"
+                                                 style="width: 60px; height: 60px; object-fit: cover;">
+                                            <div class="ms-3 flex-grow-1">
+                                                <h6 class="mb-0 fw-bold small">@item.Product.Name</h6>
+                                                <div class="text-muted small">@item.Quantity x @item.Price.ToString("#,##0.00") ₺</div>
+                                            </div>
+                                            <div class="fw-bold text-dark">@((item.Price * item.Quantity).ToString("#,##0.00")) ₺</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .custom-order-accordion .accordion-button { background-color: #fff; border-radius: 12px !important; }
+    .custom-order-accordion .accordion-button:not(.collapsed) { background-color: #fcfcfc; box-shadow: none; }
+    .status-badge { padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; }
+    .bg-warning-soft { background-color: #fff8e1; color: #ff8f00; }
+    .bg-info-soft { background-color: #e3f2fd; color: #1976d2; }
+    .bg-success-soft { background-color: #e8f5e9; color: #2e7d32; }
+    .bg-danger-soft { background-color: #ffebee; color: #c62828; }
+    .bg-soft-primary { background-color: #eef2ff; color: #4e73df; }
+    .last-child-border-0:last-child { border-bottom: 0 !important; }
+</style>
